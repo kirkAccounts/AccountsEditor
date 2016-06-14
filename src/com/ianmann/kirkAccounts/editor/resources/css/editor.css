@@ -1,0 +1,31 @@
+.form_grid{
+	-fx-padding: 0px 15px 15px 15px;
+	-fx-vgap: 15px;
+	-fx-alignment: top-right;
+}
+
+.form_title{
+	-fx-padding: 5px 100px 5px 100px;
+}
+
+.form_element.left{
+	-fx-alignment: center-right;
+	-fx-padding: 0px 30px 0px 0px;
+}
+
+.form_element.right{
+	-fx-alignment: center-left;
+	-fx-padding: 0px 0px 0px 30px;
+}
+
+.text_container{
+	-fx-max-width: 150px;
+}
+
+.form_title{
+	-fx-background-color: #4d9900;
+}
+
+.view{
+	-fx-background-color: white;
+}
