@@ -24,6 +24,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
+import javafx.stage.FileChooserBuilder;
 import javafx.stage.Stage;
 import javafx.stage.Window;;
 
@@ -54,11 +55,13 @@ public class BaseController implements Initializable {
 		
 		FileChooser fileChoose = new FileChooser();
 		fileChoose.setTitle("New Account File");
-		ExtensionFilter acctFileFilter = new ExtensionFilter("Account Files (*.acct)", "*.acct");
-		fileChoose.setSelectedExtensionFilter(acctFileFilter);
+		ExtensionFilter acctFileFilter = new ExtensionFilter("Kirk Account Files", "*.acct");
+		fileChoose.getExtensionFilters().add(acctFileFilter);
 		File newFile = fileChoose.showSaveDialog(Main.primaryStage);
 		if (newFile == null) {
 			return;
+		} else if (!newFile.getAbsolutePath().endsWith(".acct")) {
+			newFile = new File(newFile.getAbsolutePath() + ".acct");
 		}
 		
 		/*
@@ -112,18 +115,17 @@ public class BaseController implements Initializable {
 		
 		if (type.length() > 0) {
 			Main.getOpenFile().getAccount().type = type;
+			((Label) this.editorView.getChildren().get(0).lookup("#typeCurrentValue")).setText(type);
 		}
 		if (decriptedUsername.length() > 0) {
 			Main.getOpenFile().getAccount().usernameEncripted = Encriptions.encript(decriptedUsername);
+			((Label) this.editorView.getChildren().get(0).lookup("#usernameCurrentValue")).setText(decriptedUsername);
 		}
 		if (decriptedPassword.length() > 0) {
 			Main.getOpenFile().getAccount().encriptedPassword = Encriptions.encript(decriptedPassword);
+			((Label) this.editorView.getChildren().get(0).lookup("#passwordCurrentValue")).setText(decriptedPassword);
 		}
 		Main.getOpenFile().save();
-		
-		((Label) this.editorView.getChildren().get(0).lookup("#typeCurrentValue")).setText(type);
-		((Label) this.editorView.getChildren().get(0).lookup("#usernameCurrentValue")).setText(decriptedUsername);
-		((Label) this.editorView.getChildren().get(0).lookup("#passwordCurrentValue")).setText(decriptedPassword);
 		
 		((TextField) this.editorView.getChildren()
 				.get(0).lookup("#usernameField")).clear();
@@ -178,10 +180,12 @@ public class BaseController implements Initializable {
 		FileChooser fileChoose = new FileChooser();
 		fileChoose.setTitle("Select a .acct file to open.");
 		ExtensionFilter acctFileFilter = new ExtensionFilter("Account Files (*.acct)", "*.acct");
-		fileChoose.setSelectedExtensionFilter(acctFileFilter);
+		fileChoose.getExtensionFilters().add(acctFileFilter);
 		File newFile = fileChoose.showSaveDialog(Main.primaryStage);
 		if (newFile == null) {
 			return;
+		} else if (!newFile.getAbsolutePath().endsWith(".acct")) {
+			newFile = new File(newFile.getAbsolutePath() + ".acct");
 		}
 		
 		/*

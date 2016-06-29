@@ -8,12 +8,18 @@ package com.ianmann.kirkAccounts.editor.frontend.wrappers;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Map.Entry;
 
+import com.ianmann.kirkAccounts.editor.application.Main;
 import com.ianmann.kirkAccounts.files.AccountFile;
 
 import iansLibrary.security.Decriptions;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
@@ -51,13 +57,69 @@ public class FileEditor {
 			
 			String css = this.getClass().getResource("/com/ianmann/kirkAccounts/editor/resources/css/editor.css").toExternalForm();
 			this.value.getStylesheets().add(css);
-			/*
-			 * Need to set static css files through compiled bin folder as a resource
-			 * instead of the regular folder. the jar file can't see the static folder. 
-			 */
+
+			this.setQuestions();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	/**
+	 * Adds any existing security questions to the editor
+	 */
+	public void setQuestions() {
+		TabPane questionContainer = ((TabPane) this.value.lookup("#securityQuestionContainer"));
+		for (String question : Main.getOpenFile().getAccount().getDecriptedSecurityQuestions().keySet()) {
+			String answer = Main.getOpenFile().getAccount().getDecriptedSecurityQuestions().get(question);
+			questionContainer.getTabs().add(FileEditor.newQuestionTab(((TabPane) this.value.lookup("#securityQuestionContainer")),
+																	question, answer));
+		}
+	}
+	
+	public static Tab newQuestionTab(TabPane parent, String question, String answer) {
+		Tab questionTab = new Tab("     ");
+		questionTab.setId(question);
+		
+		/*
+		 * Create question/answer display
+		 */
+		VBox Q_A_Display = new VBox();
+		
+		/*
+		 * Create question display
+		 */
+		AnchorPane questionDisplay = new AnchorPane();
+		Label questionField = new Label();
+		questionField.setText(question);
+		questionDisplay.getChildren().add(questionField);
+		AnchorPane.setTopAnchor(questionField, 5.0);
+		AnchorPane.setRightAnchor(questionField, 5.0);
+		AnchorPane.setBottomAnchor(questionField, 5.0);
+		AnchorPane.setLeftAnchor(questionField, 5.0);
+		
+		/*
+		 * Create answer display
+		 */
+		AnchorPane answerDisplay = new AnchorPane();
+		Label answerField = new Label();
+		answerField.setText(answer);
+		answerDisplay.getChildren().add(answerField);
+		AnchorPane.setTopAnchor(answerField, 5.0);
+		AnchorPane.setRightAnchor(answerField, 5.0);
+		AnchorPane.setBottomAnchor(answerField, 5.0);
+		AnchorPane.setLeftAnchor(answerField, 5.0);
+		
+		Button removeQuestion = new Button("Delete Question");
+		removeQuestion.setId("delete:=:" + question);
+		removeQuestion.setOnAction(e -> {
+			Main.getOpenFile().getAccount().removeQuestion(question);
+			parent.getTabs().remove(questionTab);
+		});
+		
+		Q_A_Display.getChildren().addAll(questionDisplay, answerDisplay, removeQuestion);
+		questionTab.setContent(Q_A_Display);
+		
+		return questionTab;
 	}
 }

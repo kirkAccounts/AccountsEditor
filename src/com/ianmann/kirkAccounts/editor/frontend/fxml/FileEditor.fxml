@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox id="view_editor" prefHeight="-1.0" prefWidth="-1.0" styleClass="view" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<VBox id="view_editor" prefHeight="453.0" prefWidth="-1.0" styleClass="view" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.ianmann.kirkAccounts.editor.frontend.controllers.FileEditorController">
   <!-- TODO Add Nodes -->
   <children>
     <AnchorPane prefHeight="50.0" prefWidth="200.0">
@@ -106,5 +106,17 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
+    <Separator id="form_seperator" prefWidth="200.0" />
+    <AnchorPane prefHeight="50.0" prefWidth="200.0">
+      <children>
+        <Label id="title_questions" alignment="CENTER" contentDisplay="CENTER" minWidth="-Infinity" prefWidth="-1.0" styleClass="form_title" text="Security Questions" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      </children>
+    </AnchorPane>
+    <TabPane fx:id="securityQuestionContainer" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" />
+    <AnchorPane prefHeight="27.0" prefWidth="200.0">
+      <children>
+        <Button fx:id="btnAddQuestion" mnemonicParsing="false" onAction="#addQuestionRequested" text="Add Question" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="2.0" />
+      </children>
+    </AnchorPane>
   </children>
 </VBox>

@@ -9,11 +9,17 @@ package com.ianmann.kirkAccounts.editor.frontend.controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javax.swing.JOptionPane;
+
 import com.ianmann.kirkAccounts.editor.application.Main;
+import com.ianmann.kirkAccounts.editor.frontend.wrappers.FileEditor;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 
 /**
@@ -43,6 +49,21 @@ public class FileEditorController implements Initializable {
 	@FXML
 	private Label passwordCurrentValue;
 	
+	@FXML
+	private TabPane securityQuestionContainer;
+	
+	@FXML
+	private Button btnAddQuestion;
+	
+	@FXML
+	private void addQuestionRequested() {
+		String question = JOptionPane.showInputDialog("Question:");
+		String answer = JOptionPane.showInputDialog("Answer:");
+		Main.getOpenFile().getAccount().addDecriptedSecurityQuestion(question, answer);
+		Tab questionTab = FileEditor.newQuestionTab(this.securityQuestionContainer, question, answer);
+		this.securityQuestionContainer.getTabs().add(questionTab);
+	}
+	
 	private void edited() {
 		Main.primaryStage.setTitle(Main.primaryStage.getTitle().replace(" (saved)", "")
 				.replace(" (edited)", "")+ " (edited)");
@@ -54,7 +75,6 @@ public class FileEditorController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-
 	}
 
 }

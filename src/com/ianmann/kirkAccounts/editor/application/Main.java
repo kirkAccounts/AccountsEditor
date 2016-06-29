@@ -22,9 +22,9 @@ public class Main extends Application {
 	public static final String UNLOCK_KEY = "saline54";
 	public static String[] args;
 	
-	public volatile static AccountFile openFile;
+	public static AccountFile openFile;
 	public static BorderPane root;
-	public volatile static Stage primaryStage;
+	public static Stage primaryStage;
 	
 	/**
 	 * @return the openFile
