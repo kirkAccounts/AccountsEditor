@@ -1,4 +1,4 @@
-package com.ianmann.kirkAccounts.editor.frontend.controllers;
+package com.ianmann.accounts.editor.frontend.controllers;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,14 +8,14 @@ import java.util.ResourceBundle;
 
 import javax.swing.JOptionPane;
 
-import com.ianmann.kirkAccounts.Account;
-import com.ianmann.kirkAccounts.editor.application.Main;
-import com.ianmann.kirkAccounts.editor.frontend.wrappers.FileEditor;
-import com.ianmann.kirkAccounts.errors.CorruptFileException;
-import com.ianmann.kirkAccounts.errors.WrongFileTypeException;
-import com.ianmann.kirkAccounts.files.AccountFile;
+import com.ianmann.accounts.Account;
+import com.ianmann.accounts.editor.application.Main;
+import com.ianmann.accounts.editor.frontend.wrappers.FileEditor;
+import com.ianmann.accounts.errors.CorruptFileException;
+import com.ianmann.accounts.errors.WrongFileTypeException;
+import com.ianmann.accounts.files.AccountFile;
+import com.ianmann.utils.security.Encriptions;
 
-import iansLibrary.security.Encriptions;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.MenuItem;

@@ -4,15 +4,15 @@
  * @author Ian
  * Created: May 28, 2016
  */
-package com.ianmann.kirkAccounts.editor.frontend.controllers;
+package com.ianmann.accounts.editor.frontend.controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javax.swing.JOptionPane;
 
-import com.ianmann.kirkAccounts.editor.application.Main;
-import com.ianmann.kirkAccounts.editor.frontend.wrappers.FileEditor;
+import com.ianmann.accounts.editor.application.Main;
+import com.ianmann.accounts.editor.frontend.wrappers.FileEditor;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

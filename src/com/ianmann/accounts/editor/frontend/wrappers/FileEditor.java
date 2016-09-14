@@ -4,16 +4,16 @@
  * @author Ian
  * Created: May 28, 2016
  */
-package com.ianmann.kirkAccounts.editor.frontend.wrappers;
+package com.ianmann.accounts.editor.frontend.wrappers;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.Map.Entry;
 
-import com.ianmann.kirkAccounts.editor.application.Main;
-import com.ianmann.kirkAccounts.files.AccountFile;
+import com.ianmann.accounts.editor.application.Main;
+import com.ianmann.accounts.files.AccountFile;
+import com.ianmann.utils.security.Decriptions;
 
-import iansLibrary.security.Decriptions;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;

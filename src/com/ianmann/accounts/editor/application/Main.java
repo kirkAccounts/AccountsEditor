@@ -1,13 +1,13 @@
-package com.ianmann.kirkAccounts.editor.application;
+package com.ianmann.accounts.editor.application;
 	
 import java.io.IOException;
 
 import javax.swing.JOptionPane;
 
-import com.ianmann.kirkAccounts.editor.frontend.wrappers.Base;
-import com.ianmann.kirkAccounts.errors.CorruptFileException;
-import com.ianmann.kirkAccounts.errors.WrongFileTypeException;
-import com.ianmann.kirkAccounts.files.AccountFile;
+import com.ianmann.accounts.editor.frontend.wrappers.Base;
+import com.ianmann.accounts.errors.CorruptFileException;
+import com.ianmann.accounts.errors.WrongFileTypeException;
+import com.ianmann.accounts.files.AccountFile;
 
 import javafx.application.Application;
 import javafx.stage.Stage;

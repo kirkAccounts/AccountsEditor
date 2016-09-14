@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox id="view_editor" prefHeight="453.0" prefWidth="-1.0" styleClass="view" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.ianmann.kirkAccounts.editor.frontend.controllers.FileEditorController">
+<VBox id="view_editor" prefHeight="453.0" prefWidth="-1.0" styleClass="view" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.ianmann.accounts.editor.frontend.controllers.FileEditorController">
   <!-- TODO Add Nodes -->
   <children>
     <AnchorPane prefHeight="50.0" prefWidth="200.0">
