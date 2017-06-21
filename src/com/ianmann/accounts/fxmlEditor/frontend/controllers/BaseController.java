@@ -1,4 +1,4 @@
-package com.ianmann.accounts.editor.frontend.controllers;
+package com.ianmann.accounts.fxmlEditor.frontend.controllers;
 
 import java.io.File;
 import java.io.IOException;
@@ -9,11 +9,11 @@ import java.util.ResourceBundle;
 import javax.swing.JOptionPane;
 
 import com.ianmann.accounts.Account;
-import com.ianmann.accounts.editor.application.Main;
-import com.ianmann.accounts.editor.frontend.wrappers.FileEditor;
 import com.ianmann.accounts.errors.CorruptFileException;
 import com.ianmann.accounts.errors.WrongFileTypeException;
 import com.ianmann.accounts.files.AccountFile;
+import com.ianmann.accounts.fxmlEditor.application.Main;
+import com.ianmann.accounts.fxmlEditor.frontend.wrappers.FileEditor;
 import com.ianmann.utils.security.Encriptions;
 
 import javafx.fxml.FXML;

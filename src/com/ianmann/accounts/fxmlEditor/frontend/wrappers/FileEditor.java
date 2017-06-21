@@ -4,14 +4,14 @@
  * @author Ian
  * Created: May 28, 2016
  */
-package com.ianmann.accounts.editor.frontend.wrappers;
+package com.ianmann.accounts.fxmlEditor.frontend.wrappers;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.Map.Entry;
 
-import com.ianmann.accounts.editor.application.Main;
 import com.ianmann.accounts.files.AccountFile;
+import com.ianmann.accounts.fxmlEditor.application.Main;
 import com.ianmann.utils.security.Decriptions;
 
 import javafx.fxml.FXMLLoader;
