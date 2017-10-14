@@ -44,7 +44,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		Main.primaryStage = primaryStage;
 		Main.primaryStage.setTitle("Kirk Accounts");
-		Image stageIcon = new Image(this.getClass().getResourceAsStream("/com/ianmann/kirkAccounts/editor/resources/images/kirkAccountsLogo.png"));
+		Image stageIcon = new Image(this.getClass().getResourceAsStream("/com/ianmann/accounts/fxmlEditor/resources/images/kirkAccountsLogo.png"));
 		Main.primaryStage.getIcons().add(stageIcon);
 		
 		if (Main.args.length > 0) {

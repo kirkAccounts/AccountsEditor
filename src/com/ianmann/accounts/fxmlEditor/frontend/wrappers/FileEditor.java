@@ -34,7 +34,7 @@ public class FileEditor {
 
 	private AccountFile file;
 	public VBox value;
-	private URL fxmlFile = this.getClass().getResource("/com/ianmann/kirkAccounts/editor/frontend/fxml/FileEditor.fxml");
+	private URL fxmlFile = this.getClass().getResource("/com/ianmann/accounts/fxmlEditor/frontend/fxml/FileEditor.fxml");
 	
 	public FileEditor(AccountFile _file) {
 		this.file = _file;
@@ -55,7 +55,7 @@ public class FileEditor {
 			AnchorPane.setBottomAnchor(this.value, 0.0);
 			AnchorPane.setLeftAnchor(this.value, 0.0);
 			
-			String css = this.getClass().getResource("/com/ianmann/kirkAccounts/editor/resources/css/editor.css").toExternalForm();
+			String css = this.getClass().getResource("/com/ianmann/accounts/fxmlEditor/resources/css/editor.css").toExternalForm();
 			this.value.getStylesheets().add(css);
 
 			this.setQuestions();

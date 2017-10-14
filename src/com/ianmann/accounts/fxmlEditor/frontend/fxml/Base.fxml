@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane minHeight="-1.0" minWidth="-1.0" prefHeight="600.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.ianmann.accounts.editor.frontend.controllers.BaseController">
+<BorderPane minHeight="-1.0" minWidth="-1.0" prefHeight="600.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.ianmann.accounts.fxmlEditor.frontend.controllers.BaseController">
   <!-- TODO Add Nodes -->
   <center>
     <AnchorPane fx:id="editorView" styleClass="view" prefHeight="200.0" prefWidth="200.0" />

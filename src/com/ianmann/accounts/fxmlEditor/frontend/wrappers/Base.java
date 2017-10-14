@@ -27,13 +27,13 @@ public class Base {
 
 	private AccountFile file;
 	public BorderPane value;
-	private URL fxmlFile = this.getClass().getResource("/com/ianmann/kirkAccounts/editor/frontend/fxml/Base.fxml");
+	private URL fxmlFile = this.getClass().getResource("/com/ianmann/accounts/fxmlEditor/frontend/fxml/Base.fxml");
 	
 	public Base() {
 		try {
 			this.value = FXMLLoader.load(this.fxmlFile);
 
-			String css = this.getClass().getResource("/com/ianmann/kirkAccounts/editor/resources/css/base.css").toExternalForm();
+			String css = this.getClass().getResource("/com/ianmann/accounts/fxmlEditor/resources/css/base.css").toExternalForm();
 			this.value.getStylesheets().add(css);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
